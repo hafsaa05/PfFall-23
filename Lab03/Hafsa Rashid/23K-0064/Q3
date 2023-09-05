@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+           int double base=0;
+           int double perpendicular=0;
+           int double hypotenuse=0;
+           printf("Enter base length");
+           scanf("%d", &base);
+           printf("Enter perpendicular length");
+           scanf("%d", &perpendicular);
+           hypotenuse=sqrt(base*base + perpendicular*perpendicular);
+           printf("hypotenuse: %d", hypotenuse);
+           return=0
+}
