@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main() {
+            int firstNum;
+            int secondNum;
+            int sum;
+            int sub;
+            int mux;
+            int div;
+            char opt;
+            printf("choose any operator ('+','-','*','/')");
+            scanf("%c", opt);
+            printf("Enter any value:");
+            scanf("%d", &firstNum);
+            printf("Enter any value:");
+            scanf("%d", &secondNum);
+            if(opt=='+')
+            { sum=(firstNum+secondNum);
+            printf("sum: %d",sum);
+            }
+            else if(opt=='-')
+            { sub=(firstNum-secondNum);
+            printf("sub: %d",sub);
+            }
+            else if(opt=='*');
+            { mux=(firstNum*secondNum);
+            printf("mux: %d",mux);
+            }
+            else if(opt=='/');
+            { div=(firstNum/secondNum);
+            printf("div: %d",div);
+            }
+}            
