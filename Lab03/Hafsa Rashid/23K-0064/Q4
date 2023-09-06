@@ -1,0 +1,8 @@
+#include <stdio.h>
+main() {
+        int originalPrice=1500;
+        int discountPercentage=20;
+        float discountAmount=(discountPercentage/100)*originalPrice;
+        float salePrice=originalPrice-DiscountAmountprintf("salePrice is %.2f\n", salePrice);
+        return 0;
+}
