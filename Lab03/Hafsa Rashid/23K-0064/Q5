@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+            int distanceA=10;
+            int distanceB=10;
+            int distanceC=5;
+            int distanceD=15;
+            int feul=2;
+            float totalDistance=(distanceA+distanceB+distanceC+distanceD);
+            printf("totalDistance: %f", totalDistance);
+            float totalFeul=(feul*totalDistance);
+            printf("totalFeul; %d", totalFeul);
+    return 0;
+}
