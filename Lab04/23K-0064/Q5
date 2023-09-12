@@ -1,0 +1,30 @@
+/*
+ *Programmer: Syed Farooq Zaidi
+ *Date:12th September 2023
+ *Description: Program that asks DOB of two persons and then prints who is older.
+*/
+#include <stdio.h>
+int main() {
+    int day1, month1, year1;
+    int day2; month2, year2;
+    printf("Please use this format while entering DOB (DD MM YYYY)\n\n\n");
+    printf("Enter the DOB for Person 1\n"):
+    scanf("%d %d %d", &day1, &month1, &year1);
+    printf("Enter the DOB for Person 2\n"):
+    scanf("%d %d %d", &day2, &month2, &year2);
+ if (year1<year2) {
+    printf("Person 1 is elder.\n");
+} else if (year1>year2) {
+    printf("Person 2 is elder.\n");
+}  else if (month>month2) {
+    printf("Person 1 is elder.\n");
+} else {
+  if (day1<day2) {
+     printf("Person 2 is elder.\n");
+} else {
+        printf("Both persons have the same birthdate.\n");
+        }
+    }
+}
+return 0;
+}
