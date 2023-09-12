@@ -1,0 +1,22 @@
+/*
+ *Programmer: Syed Farooq Zaidi
+ *Date:12th September 2023
+ *Description:Print a pattern using n=4. 
+*/
+#include <stdio.h>
+int main() {
+           int n=1;
+           int i,j rows;
+           printf("enter number of rows\n");
+           scanf("%d", &rows);
+            while (i>=n) {
+                          printf("*");
+                          i++; 
+                          while (j>=i) {
+                               printf("*");
+                               j++;
+                          }                           
+}
+                         printf("\n");
+                         return 1;
+}//end main
