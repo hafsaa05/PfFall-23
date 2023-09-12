@@ -1,0 +1,59 @@
+/*
+ *Programmer: Syed Farooq Zaidi
+ *Date:12th September 2023
+ *Description: Print the pattern for any number of n. Below is an examples for n=4.
+ *      *
+ *     * *
+ *    *   *
+ *     * *
+ *      *
+*/
+#include<stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    int row = 1;
+    while (row <= n) {
+        int spaces = 1;
+        while (spaces <= n - row) {
+            printf(" ");
+            spaces++;
+        }
+        int stars = 1;
+        while (stars <= 2 * row - 1) {
+            if (stars == 1 || stars == 2 * row - 1)
+                printf("*");
+            else
+                printf(" ");
+            stars++;
+        }
+        printf("\n");
+        row++;
+    }
+
+    row = n - 1;
+    while (row >= 1) {
+        int spaces = n - row;
+        while (spaces > 0) {
+            printf(" ");
+            spaces--;
+        }
+        int stars = 1;
+        while (stars <= 2 * row - 1) {
+            if (stars == 1 || stars == 2 * row - 1)
+                printf("*");
+            else
+                printf(" ");
+            stars++;
+        }
+        printf("\n");
+        row--;
+    }
+
+    return 0;
+}
+
+
+   
