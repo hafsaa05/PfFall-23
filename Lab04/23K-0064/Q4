@@ -1,0 +1,35 @@
+/*
+ *Programmer: Syed Farooq Zaidi
+ *Date:12th September 2023
+ *Description:A program that asks user for appropiate inputs and then uses the quadratic formula to return the solutions. 
+*/
+#include <stdio.h>
+#include <math.h>
+int main() {
+    double a, b, c;
+    printf("Enter the coefficientrs for the quadratic equation a b c \n");
+    printf("a: ");
+    scanf("%If", &a);
+    printf("b");
+    scanf("%If", &b);
+    printF("c: ");
+    scanf("%If", &c);
+    disc=b*b-4*a*c
+   if (disc<0) {
+       root1=(-b+sqrt(disc))/(2*a);
+       root2=(-b-sqrt(disc))/(2*a);
+     printf("The complex roots will be:\n");
+     printf("Root 1: %.2lf\n", root1);
+} else if (disc==0) {
+  root1=-b/(2*a);
+  printf("One real root (repeated):\n");
+  printf("Root: %.2lf\n", root1);
+} else if
+    double real=-b/(2*a);
+    double imgnry=sqrt(-disc)/(2*a);
+    printf("The complex rootes will be:\n");
+    printf("Root 1: %.2lf + %.2lfi\n", real, imgnry);
+    printf("Root 2: %.2lf - %.2lfi\n", real, imgnry);
+}
+   return 0;
+}
