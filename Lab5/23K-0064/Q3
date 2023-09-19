@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    char userInput;
+    printf ("Are you sure you want to delete [Y/y] / [N/n]");
+    scanf("%c", &userInput);
+    if (userInput=='y' && userInput=='Y')
+{
+       printf("Deleted Successfully\n");
+    } else if (userInput=='n' && userInput=='N') {
+              printf("Deleted canceled\n");
+    } else {
+         printf("Invalid input. Please enter 'y' or 'n'\n");
+    }  
+    return 0;
+}
