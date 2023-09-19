@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    unsigned char num;
+    printf("Enter an 8-bit number (0-255): ");
+    scanf("%hhu", &num);
+    unsigned char lower4Bits = num & 0x0F; 
+    unsigned char higher4Bits = (num >> 4) & 0x0F; 
+    if (lower4Bits != higher4Bits) {
+        num = (lower4Bits << 4) | higher4Bits;
+        printf("Number after exchanging bits: %u\n", num);
+    } else {
+        printf("The entered number does not include at least two different digits.\n");
+    }
+
+    return 0;
+}
+//end main
