@@ -1,0 +1,20 @@
+include <stdio.h>
+
+int main() {
+    int lightSensorValue;
+    printf("Enter the light sensor value (0-1000): ");
+    scanf("%d", &lightSensorValue);
+
+    if (lightSensorValue > 500) {
+        printf("Exposure Under Sunshine\n");
+    } else if (lightSensorValue >= 0 && lightSensorValue <= 100) {
+        printf("Evening\n");
+    } else if (lightSensorValue > 100 && lightSensorValue <= 500) {
+        printf("Lighting\n");
+    } else {
+        printf("Invalid input. Please enter a value between 0 and 1000.\n");
+    }
+
+    return 0;
+}
+//end main
