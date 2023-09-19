@@ -1,0 +1,40 @@
+include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c;
+    double disc, root1, root2;
+
+    printf("Enter the coefficients for the quadratic equation a  b c \n");
+    printf("a: ");
+    scanf("%lf", &a);
+    printf("b: ");
+    scanf("%lf", &b);
+    printf("c: ");
+    scanf("%lf", &c);
+    disc = b * b - 4 * a * c;
+
+    if (disc > 0) {
+        root1 = (-b + sqrt(disc)) / (2 * a);
+        root2 = (-b - sqrt(disc)) / (2 * a);
+
+      printf("The complex roots will be:\n");
+        printf("Root 1: %.2lf\n", root1);
+        printf("Root 2: %.2lf\n", root2);
+    } else if (disc == 0) {
+        root1 = -b / (2 * a);
+        printf("One real root (repeated):\n");
+        printf("Root: %.2lf\n", root1);
+    } else {
+        double real = -b / (2 * a);
+        double imgnry = sqrt(-disc) / (2 * a);
+        printf("The complex roots will be:\n");
+        printf("Root 1: %.2lf + %.2lfi\n", real, imgnry);
+        printf("Root 2: %.2lf - %.2lfi\n", real, imgnry);
+        
+        printf("The disc will be: %.2lf\n", disc);
+    }
+
+    return 0;
+}
+//end main
