@@ -1,0 +1,12 @@
+# Flowcharts
+## Q1 ![20231001_135916](https://github.com/hafsaa05/PfFall-23/assets/142868426/09499165-e81c-4371-805d-4d861620a984)
+## Q2 ![20231001_135852](https://github.com/hafsaa05/PfFall-23/assets/142868426/42ecb16c-b073-4919-90d3-b0b348900635)
+## Q3 ![20231001_140318](https://github.com/hafsaa05/PfFall-23/assets/142868426/267588ff-d000-49eb-8d21-0d399a19d894)
+## Q4 ![20231001_140354](https://github.com/hafsaa05/PfFall-23/assets/142868426/b1f395f7-5607-4cf6-b22f-a934215658ee)
+## Q5 ![20231001_135948](https://github.com/hafsaa05/PfFall-23/assets/142868426/6e19c94a-76b3-447c-bcb3-2dffefb15eeb)
+## Q6 ![20231001_135939](https://github.com/hafsaa05/PfFall-23/assets/142868426/26330368-e28c-4c00-9f23-a66b266dca80)
+## Q7 ![20231001_135954](https://github.com/hafsaa05/PfFall-23/assets/142868426/8612b503-63e5-4ff4-a1d9-dcde4f831e7b)
+## Q8 ![20231001_140000](https://github.com/hafsaa05/PfFall-23/assets/142868426/eb2c7914-02fb-4e5b-94a4-78fe7e5c6a85)
+## Q9 ![20231001_140009](https://github.com/hafsaa05/PfFall-23/assets/142868426/cc621f81-8025-443e-83b8-4b183ca5bb08)
+#    ![20231001_140012](https://github.com/hafsaa05/PfFall-23/assets/142868426/20f57641-8db2-4784-9200-6a702c4d219f)
+## Q10 ![20231001_140716](https://github.com/hafsaa05/PfFall-23/assets/142868426/0cc6253e-3aa2-4b86-85e8-48d41c56f044)
