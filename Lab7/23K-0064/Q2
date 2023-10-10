@@ -19,7 +19,7 @@ int main() {
 	{
 	printf("%d", arr[i]);
     }
-    printf("By which position you want to rotate the array: ");
+    printf("By which position you want to rotate the array: ")
     scanf("%d, ", &position);
     printf("\n");
    
