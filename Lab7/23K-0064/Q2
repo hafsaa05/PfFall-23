@@ -1,0 +1,42 @@
+**
+/Programmer: Hafsa Rashid
+/Date: 1oth Oct'23
+/Desc:To rotate the array elements to the left by d positions.
+**/
+#include<stdio.h>
+int main() {
+
+	int n;
+	printf("enter size of 1D array\n");
+	scanf("%d", &n);
+	int arr[n];
+	int i, j, k;
+	int position, temp;
+	
+	for(i=0; i<n; i++)
+	{
+	printf("What is the element number\n", i+1);
+	scanf("%d", &arr[i]);
+}
+	for(i=0; i<n; i++);
+	{
+	printf("%d", arr[i]);
+    }
+    printf("By which position you want to rotate the array: ");
+    scanf("%d", &position);
+    printf("\n");
+   
+    for(j=0; j<position; j++);
+    {
+    	temp=arr[0];
+    	for(k=0; k<n-1; k++)
+    	{
+    		arr[k]=arr[k+1];		
+		}
+		arr[n-1]=temp;
+	}
+	for(i=0; i<n; i++)
+	{
+		printf("%d", arr[i]);
+	}
+}
