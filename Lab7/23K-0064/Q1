@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int a, b;
+	int q=0;
+	printf("enter two numbers\n");
+	scanf("%d %d", &a, &b);
+	int x=a;
+	if(a<b)
+   	  {
+		printf("%d divided by %d is 0 \n", x,b);
+	  }
+	while(a>=b)
+	{
+		a=a-b;
+		q++;
+	}
+		printf("\n%d divided by %d is %d", x,b,q);
+	
+}
