@@ -32,7 +32,7 @@ int main() {
 			for(k=0;k<2;k++)
 			{
 				mul = mul+(matrix1[i][k]*matrix2[k][j]);
-				matrix3[i][j]=sum;
+				matrix3[i][j]=mul;
 			}
 
 
