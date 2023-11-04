@@ -8,7 +8,7 @@ int main() {
 	int matrix1[2][2];
 	int matrix2[2][2];
 	int matrix3[2][2];
-	int i,j,sum;
+	int i,j,mul;
 	printf("The elements of matrix 1 is :\n");
 	for(i=0;i<2;i++) {
 		for(j=0;j<2;j++)
@@ -31,7 +31,7 @@ int main() {
 			sum =0;
 			for(k=0;k<2;k++)
 			{
-				sum = sum+(matrix1[i][k]*matrix2[k][j]);
+				mul = mul+(matrix1[i][k]*matrix2[k][j]);
 				matrix3[i][j]=sum;
 			}
 
