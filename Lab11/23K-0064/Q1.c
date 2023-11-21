@@ -1,3 +1,12 @@
+
+/* Date: 11/21/2023
+Programmer: Hafsa Rashid
+Descrip: Create a structure to specify data on students given below:
+Roll number, Name, Department, Course, Year of joining Assume that there are not more than
+450 students in the college.
+● Print names of all students who joined in a particular year.
+● Print the data of a student whose roll number is given.
+*/
 #include <stdio.h>
 
 #define MAX_STUDENTS 450
