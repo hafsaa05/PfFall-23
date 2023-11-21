@@ -2,7 +2,6 @@
 
 #define MAX_STUDENTS 450
 
-// Define a structure for student data
 struct Student {
     int rollNumber;
     char name[50];
@@ -11,7 +10,7 @@ struct Student {
     int yearOfJoining;
 };
 
-// Function to print names of students who joined in a particular year
+
 void printStudentsByYear(struct Student students[], int numStudents, int targetYear) {
     printf("Students who joined in %d:\n", targetYear);
     for (int i = 0; i < numStudents; ++i) {
@@ -22,7 +21,7 @@ void printStudentsByYear(struct Student students[], int numStudents, int targetY
     printf("\n");
 }
 
-// Function to print the data of a student with a given roll number
+
 void printStudentByRollNumber(struct Student students[], int numStudents, int targetRollNumber) {
     for (int i = 0; i < numStudents; ++i) {
         if (students[i].rollNumber == targetRollNumber) {
@@ -34,24 +33,40 @@ void printStudentByRollNumber(struct Student students[], int numStudents, int ta
             return; // exit the function once the student is found
         }
     }
-    // If the loop completes, the student with the given roll number was not found
+    
     printf("Student with Roll Number %d not found.\n\n", targetRollNumber);
 }
 
 int main() {
     // Use a fixed-size array for students
-    struct Student students[MAX_STUDENTS] = {
-        {1, "John Doe", "Computer Science", "B.Tech", 2022},
-        {2, "Jane Smith", "Electrical Engineering", "B.Tech", 2021},
-        // Add more students here...
-    };
+    struct Student students[MAX_STUDENTS];
 
-    // Update this with the actual number of students
-    int numStudents = 2;
+    // Get the actual number of students from the user
+    int numStudents;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
 
-    // Example usage
+    // Input student data from the user
+    for (int i = 0; i < numStudents; ++i) {
+        printf("Enter data for student %d:\n", i + 1);
+        printf("Roll Number: ");
+        scanf("%d", &students[i].rollNumber);
+        printf("Name: ");
+        scanf("%s", students[i].name);
+        printf("Department: ");
+        scanf("%s", students[i].department);
+        printf("Course: ");
+        scanf("%s", students[i].course);
+        printf("Year of Joining: ");
+        scanf("%d", &students[i].yearOfJoining);
+    }
+
+
     printStudentsByYear(students, numStudents, 2022);
-    printStudentByRollNumber(students, numStudents, 1);
+
+    int targetRollNumber;
+    printf("Enter the Roll Number to search: ");
+    scanf("%d", &targetRollNumber);
+    printStudentByRollNumber(students, numStudents, targetRollNumber);
 
     return 0;
-}
