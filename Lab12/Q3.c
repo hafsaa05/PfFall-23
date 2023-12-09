@@ -1,6 +1,6 @@
 /*
 *Programmer: Hafsa Rashid
-*Date: 28 Nov 2023
+*Date: 28/11/23
 *Desc: Create a structure to keep record of each course (course code, course name, course gpa, semester). 
 Make a console application that allows to input course infromation and save data to a file. 
 Then it has an option to view transcript, calculate CGPA and SGPAs.
