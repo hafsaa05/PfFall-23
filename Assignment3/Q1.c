@@ -5,96 +5,89 @@
 tackles any of the dimensions. Your program should compute the max value from each 2 x 2
 submatrix and save it into a new matrix.
  */
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-#define MAX_BUFFER_SIZE 100
+int i, j, a, b;
 
-// dynamic allocation of the matrix
-int **create_matrix(int n)
-{
-	int **mat = (int **)malloc(sizeof(int *) * n);
-	int *block = (int *)malloc(sizeof(int) * n*n);
+void maximum_value(int **arr, int size) {
+    for (i = 0; i < size; i += 2) {
+        for (j = 0; j < size; j += 2) {
+            int max = arr[i][j];
+            for (a = 0; a < 2; a++) {
+                for (b = 0; b < 2; b++) {
+                    if (max < arr[i + a][j + b]) {
+                        max = arr[i + a][j + b];
+                    }
+                }
+            }
+            printf("%d\t", max);
+        }
+        printf("\n");
+    }
+}
 
-	for (int i = 0; i < n; i++) mat[i] = block + i*n;
+int main(int argc, char const *argv[]) {
+    printf("Programmer: Hafsa Rashid\nID: 23K-0064\n");
 
-	return mat;
-} // end create_matrix()
+    int size = atoi(argv[1]);
 
-void read_file_matrix(FILE *fp, int **mat, int n)
-{
-	char buffer[MAX_BUFFER_SIZE];
+    while (!(size == 2 || size == 4 || size == 8)) {
+        printf("Incorrect dimension\nEnter dimension again: ");
+        scanf("%d", &size);
+    }
 
-	for (int i = 0; !feof(fp) && i < n; i++) {
-		fgets(buffer, MAX_BUFFER_SIZE, fp);
-		buffer[strcspn(buffer, "\n")] = 0; // remove new line
+    FILE *fptr;
+    fptr = fopen(argv[2], "r");
 
-		// read through space separated values in the file
-		char *num = strtok(buffer, " ");
-		for (int j = 0; num != NULL && j < n; j++) {
-			mat[i][j] = atoi(num);
+    if (fptr == NULL) {
+        printf("Error reading File");
+        return 1;
+    }
 
-			num = strtok(NULL, " ");
-		}
-	}
-} // end read_file_matrix()
+    int **arr = malloc(size * sizeof(int *));
+    if (arr == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
 
-void print_matrix(int **mat, int n)
-{
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			printf("%-3d ", mat[i][j]);
-		}
-		printf("\n\n");
-	}
-} // end print_matrix()
+    for (i = 0; i < size; i++) {
+        arr[i] = malloc(size * sizeof(int));
+        if (arr[i] == NULL) {
+            printf("Memory allocation failed");
+            return 1;
+        }
+    }
 
-int max(int **mat, int i, int j, int n)
-{
-	int max_val = 1 << 31;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            if (fscanf(fptr, "%d", &arr[i][j]) != 1) {
+                fclose(fptr);
+                return 1;
+            }
+        }
+    }
 
-	// checking for the entire square matrix's positions
-	for (int k = 0, check[] = {0,0, 1,0, 1,1, 0,1}; k < 8;)
-		max_val = (mat[i+check[k++]][j+check[k++]] > max_val) ? mat[i+check[k-2]][j+check[k-1]] : max_val;
+    fclose(fptr);
 
-	return max_val;
-} // end max()
+    // Print the original matrix
+    printf("Original Matrix:\n");
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
 
-int **get_sub_matrix(int **mat, int n) 
-{	
-	int **sub_mat = create_matrix(n/2);
+    // Find and print maximum values in sub-blocks
+    printf("\nMaximum Values in Sub-Blocks:\n");
+    maximum_value(arr, size);
 
-	for (int i = 0; i < n; i += 2) {
-		for (int j = 0; j < n; j += 2) {
-			// assign max value to the sub matrix
-			sub_mat[i/2][j/2] = max(mat, i, j, n);
-		}
-	}
+    // Free allocated memory
+    for (i = 0; i < size; i++) {
+        free(arr[i]);
+    }
+    free(arr);
 
-	return sub_mat;
-} // end get_sub_matrix()
-
-int main(int argc, char const *argv[])
-{
-	printf("Programer: Hafsa Rashid\nID: 23K-0064\n\n");
-	int n = atoi(argv[1]);
-
-	while (!(n == 2 || n == 4 || n == 8)) {
-		printf("Incorrect dimension\nEnter dimension again: ");
-		scanf("%d", &n);
-	}
-
-	FILE *fp = fopen(argv[2], "r");
-
-	int **mat = create_matrix(n);
-	read_file_matrix(fp, mat, n);
-	print_matrix(mat, n);
-
-	int **sub_mat = get_sub_matrix(mat, n);
-	printf("\nSubmatrix with maximum values:\n");
-	print_matrix(sub_mat, n/2);
-
-	return 0;
-} // end main()
+    return 0;
+}
